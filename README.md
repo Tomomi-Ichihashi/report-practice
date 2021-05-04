@@ -21,16 +21,16 @@ Reportは、スケジュール管理、日報提出、得意先管理ができ�
 　→日報　
 
 ## 設計書
-ER図
+ER図  
 ![PF](https://user-images.githubusercontent.com/78362676/116961565-a243c680-acde-11eb-8265-1688f6e68c1c.png)
 
-テーブルデザイン
+テーブルデザイン  
 https://docs.google.com/spreadsheets/d/17nlAZ4qBlIHMCP2D3kyTe-HN-RBRCK-1qouhv-Q1OVA/edit?usp=sharing
 
-Flows
+Flows  
 https://docs.google.com/spreadsheets/d/1NNcyPLeh6h-XZ5YTa1sr1aTmJBARj-XcscR3SYHT2sM/edit?usp=sharing
 
-画面設計
+画面設計  
 https://docs.google.com/presentation/d/1ubVVvnEhcMb3RRK5hyhEXS86B5uUcVS-C-rMf5lRwZA/edit?usp=sharing
 
 ## チャレンジ要素一覧
