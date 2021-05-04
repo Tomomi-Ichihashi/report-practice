@@ -22,7 +22,7 @@ Reportは、スケジュール管理、日報提出、得意先管理ができ�
 
 ## 設計書
 ER図
-
+![PF](https://user-images.githubusercontent.com/78362676/116961565-a243c680-acde-11eb-8265-1688f6e68c1c.png)
 
 テーブルデザイン
 https://docs.google.com/spreadsheets/d/17nlAZ4qBlIHMCP2D3kyTe-HN-RBRCK-1qouhv-Q1OVA/edit?usp=sharing
