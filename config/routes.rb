@@ -20,6 +20,13 @@ devise_for :users, controllers: {
     #get 'clients/edit'
   end
   
+  scope module: :users do
+    resources :users, except: [:destroy, :new, :create]
+    #get 'users/index'
+    #get 'users/show'
+    #get 'users/edit'
+  end
+  
   namespace :admins do
     resources :users, except: [:destroy]
     #get 'users/new'
