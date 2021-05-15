@@ -13,7 +13,9 @@ devise_for :users, controllers: {
 }
 
   scope module: :users do
-    resources :clients, except: [:destroy]
+    resources :clients, except: [:destroy] do
+      resources :comments, only: [:create, :destroy]
+    end
     #get 'clients/new'
     #get 'clients/index'
     #get 'clients/show'

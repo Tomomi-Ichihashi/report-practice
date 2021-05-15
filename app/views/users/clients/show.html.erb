@@ -4,7 +4,7 @@
   </div>
 
   <div class="row">
-    <div class="col-8 ">
+    <div class="col-7 ">
       <table class="table table-striped">
   
         <tr>
@@ -41,13 +41,27 @@
           <th class="text-center">メールアドレス</th>
           <th><%= @client.email %></th>
         </tr>
-
       </table>
+      <%= link_to "編集する", edit_client_path(@client), class:"offset-4 btn btn-success" %>
     </div>
+    
+     <div class="col-5">
+       <h5>＜引き継ぎ事項＞</h5>
+　　　　<!--コメント機能非同期-->
+　　　　
+        <div id="comment_form">
+         <%= render 'users/comments/form', comment: @comment, client: @client %>
+        </div>
+        
+        <div id="comment_index">
+       　<%= render 'users/comments/index', client: @client %>
+      　</div>
+      　
+        <!--コメント機能非同期-->
+     </div>
+       
   </div>
   
-  <div class="row">
-    <%= link_to "編集する", edit_client_path(@client), class:"offset-4 btn btn-success" %>
-  </div>
+
 
 

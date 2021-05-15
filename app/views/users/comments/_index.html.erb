@@ -1,0 +1,21 @@
+
+     <table class= 'table table-borderless'>
+        <%= client.inspect %>
+        <% client.comments.each do |comment| %>
+        <tr>
+        
+        <td>
+          <%= link_to user_path(comment.user) do %>
+           <%= comment.user.last_name %> <%= comment.user.first_name %>
+          <% end %>
+        </td>
+        
+        <td><%= comment.body %></td>
+        
+         <% if comment.user == current_user %>
+         <td><%= link_to 'Destroy', client_comment_path(client, comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %></td>
+         <% end %>
+         
+        </tr>
+        <% end %>
+      </table>

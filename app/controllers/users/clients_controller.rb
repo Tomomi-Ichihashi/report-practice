@@ -20,6 +20,8 @@ class Users::ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    @comment = Comment.new
+    @comments = @client.comments.order(created_at: :desc)
   end
 
   def edit
