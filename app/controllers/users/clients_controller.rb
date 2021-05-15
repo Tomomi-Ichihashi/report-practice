@@ -21,7 +21,7 @@ class Users::ClientsController < ApplicationController
   def show
     @client = Client.find(params[:id])
     @comment = Comment.new
-    @comments = @client.comments.order(created_at: :desc)
+    @comments = @client.comments.order(created_at: :DESC)
   end
 
   def edit
