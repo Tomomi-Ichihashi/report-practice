@@ -1,30 +1,17 @@
-# frozen_string_literal: true
+class Users::ConfirmationsController < ApplicationController
+  
+  def create
+    report = Report.find(params[:report_id])
+    # confirmation.user_id = current_user.idが済んだ状態で生成
+    confirmation = current_user.confirmations.build(report_id: params[:report_id])
+    confirmation.save
+    redirect_back(fallback_location:root_path)
+  end
 
-class Users::ConfirmationsController < Devise::ConfirmationsController
-  # GET /resource/confirmation/new
-  # def new
-  #   super
-  # end
-
-  # POST /resource/confirmation
-  # def create
-  #   super
-  # end
-
-  # GET /resource/confirmation?confirmation_token=abcdef
-  # def show
-  #   super
-  # end
-
-  # protected
-
-  # The path used after resending confirmation instructions.
-  # def after_resending_confirmation_instructions_path_for(resource_name)
-  #   super(resource_name)
-  # end
-
-  # The path used after confirmation.
-  # def after_confirmation_path_for(resource_name, resource)
-  #   super(resource_name, resource)
-  # end
+  def destroy
+    report = Report.find(params[:report_id])
+    confirmation = current_user.confirmations.find_by(report_id: params[:report_id])
+    confirmation.destroy
+    redirect_back(fallback_location:root_path)
+  end
 end

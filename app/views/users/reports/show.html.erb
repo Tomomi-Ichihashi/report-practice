@@ -4,6 +4,13 @@
   </div>
   
   <span><%= @report.created_at %>作成</span>
+  <% if @report.created_at != @report.updated_at %>
+  <span><%= @report.updated_at %>更新</span>
+  <% end %>
+  
+  <span class="confirmations_buttons_<%= @report.id %>">
+    <%= render 'users/confirmations/confirmation', report: @report %>
+  </span>
 
   <div class="row">
     <div class="col-12 ">
@@ -33,8 +40,11 @@
     </div>
   </div>
   
+  <% if @report.user == current_user %>
   <div class="row">
-    <%= link_to "編集する", edit_report_path(@report), class:"offset-4 btn btn-success" %>
+    <%= link_to "編集", edit_report_path(@report), class:"offset-4 btn btn-success" %>
+    <%= link_to '削除', report_path(@report), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "offset-1 btn  btn-danger" %>
   </div>
+  <% end %>
   
 </div>

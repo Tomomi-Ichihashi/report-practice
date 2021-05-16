@@ -1,0 +1,21 @@
+  <% if report.user.id != current_user.id %>
+
+    <% if report.confirmed_by?(current_user) %>
+
+        <%= link_to report_confirmations_path(report), method: :delete, remote: true do %>
+        <span class= "text-success"><i class="fas fa-check-square"></i> 確認済解除: <%= report.confirmations.count %></span>
+        <% end %>
+
+    <% else %>
+
+        <%= link_to report_confirmations_path(report), method: :post, remote: true do %>
+        <span class= "text-black"><i class="fas fa-check-square"></i> 確認済登録: <%= report.confirmations.count %></span>
+        <% end %>
+
+    <% end %>
+
+  <% else %>
+
+   <span class= "text-success"><i class="fas fa-check-square"></i> 確認済者数: <%= report.confirmations.count %></span>
+
+  <% end %>

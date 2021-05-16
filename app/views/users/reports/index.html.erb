@@ -4,14 +4,14 @@
   </div>
 
   <div class="row">
-    <div class="col-8 mx-auto">
+    <div class="col-12 mx-auto">
       <table class="table table-striped">
         <thead>
           <tr>
             <th class="text-center">作成者</th>
             <th>取引先</th>
             <th>訪問日時</th>
-
+            <th>確認</th>
           </tr>
         </thead>
         <% @reports.each do |report| %>
@@ -21,10 +21,12 @@
           <th class="align-middle">
             <%= link_to "#{report.start_visit} ~ #{report.finish_visit}", report_path(report) %>
           </th>
+          <th class="confirmations_buttons_<%= report.id %>">
+            <%= render 'users/confirmations/confirmation', report: report %>
+          </th>
         </tr>
         <% end %>
       </table>
     </div>
   </div>
-
 </div>
