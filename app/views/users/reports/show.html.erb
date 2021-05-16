@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row mb-5">
+    <h4 class="col-md-3 offset-1 bg-light text-center">報告の詳細</h4>
+  </div>
+  
+  <span><%= @report.created_at %>作成</span>
+  <% if @report.created_at != @report.updated_at %>
+  <span><%= @report.updated_at %>更新</span>
+  <% end %>
+  
+  <span class="confirmations_buttons_<%= @report.id %>">
+    <%= render 'users/confirmations/confirmation', report: @report %>
+  </span>
+
+  <div class="row">
+    <div class="col-12 ">
+      <table class="table table-striped">
+ 
+        <tr>
+          <th class="text-center">取引先名</th>
+          <th><%= @report.client.name %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">作成者</th>
+          <th><%= @report.user.last_name %> <%= @report.user.first_name %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">訪問日時</th>
+          <th><%= @report.start_visit %> ~ <%= @report.start_visit %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">報告内容</th>
+          <th><%= @report.body %></th>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+  
+  <% if @report.user == current_user %>
+  <div class="row">
+    <%= link_to "編集", edit_report_path(@report), class:"offset-4 btn btn-success" %>
+    <%= link_to '削除', report_path(@report), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "offset-1 btn  btn-danger" %>
+  </div>
+  <% end %>
+  
+</div>

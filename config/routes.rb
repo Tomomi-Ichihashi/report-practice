@@ -27,6 +27,15 @@ devise_for :users, controllers: {
     #get 'users/index'
     #get 'users/show'
     #get 'users/edit'
+    resources :reports do
+    # get 'reports/index'
+    # get 'reports/new'
+    # get 'reports/show'
+    # get 'reports/edit'
+    resource :confirmations, only: [:create, :destroy]
+    #get 'confirmations/create'
+    #get 'confirmations/destroy'
+  end
   end
   
   namespace :admins do

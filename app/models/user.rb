@@ -9,5 +9,7 @@ class User < ApplicationRecord
   
   # アソシエーション
    has_many :comments
+   has_many :reports
+   has_many :confirmations
   
 end
