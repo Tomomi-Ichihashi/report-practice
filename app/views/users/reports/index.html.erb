@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <h4 class="col-md-3 bg-light text-center">報告一覧</h4>
+  </div>
+
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">作成者</th>
+            <th>取引先</th>
+            <th>訪問日時</th>
+
+          </tr>
+        </thead>
+        <% @reports.each do |report| %>
+        <tr class="border-bottom">
+          <th class="align-middle"><%= report.user.last_name %> <%= report.user.first_name %></th>
+          <th class="align-middle"><%= report.client.name %></th>
+          <th class="align-middle">
+            <%= link_to "#{report.start_visit} ~ #{report.finish_visit}", report_path(report) %>
+          </th>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+</div>

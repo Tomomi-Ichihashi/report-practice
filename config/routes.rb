@@ -27,6 +27,11 @@ devise_for :users, controllers: {
     #get 'users/index'
     #get 'users/show'
     #get 'users/edit'
+    resources :reports
+    # get 'reports/index'
+    # get 'reports/new'
+    # get 'reports/show'
+    # get 'reports/edit'
   end
   
   namespace :admins do

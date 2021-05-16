@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row mb-5">
+    <h4 class="col-md-3 offset-1 bg-light text-center">報告の詳細</h4>
+  </div>
+  
+  <span><%= @report.created_at %>作成</span>
+
+  <div class="row">
+    <div class="col-12 ">
+      <table class="table table-striped">
+ 
+        <tr>
+          <th class="text-center">取引先名</th>
+          <th><%= @report.client.name %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">作成者</th>
+          <th><%= @report.user.last_name %> <%= @report.user.first_name %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">訪問日時</th>
+          <th><%= @report.start_visit %> ~ <%= @report.start_visit %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">報告内容</th>
+          <th><%= @report.body %></th>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+  
+  <div class="row">
+    <%= link_to "編集する", edit_report_path(@report), class:"offset-4 btn btn-success" %>
+  </div>
+  
+</div>
