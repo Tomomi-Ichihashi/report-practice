@@ -53,3 +53,4 @@ https://docs.google.com/spreadsheets/d/11PIE8HhVMzGGlL_TLqyxvPUqZ9Imog1h9CxK2yMn
 ## 使用素材
 - かわいいフリー素材集 いらすとや（https://www.irasutoya.com/）
 - O-DAN FREE PHOTO（https://o-dan.net/ja/）
+- <div>Logo made by <a href="https://www.designevo.com/" title="Free Online Logo Maker">DesignEvo free logo creator</a></div>
