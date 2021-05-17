@@ -9,13 +9,13 @@
     <% else %>
 
         <%= link_to report_confirmations_path(report), method: :post, remote: true do %>
-        <span class= "text-black"><i class="fas fa-check-square"></i> 確認済登録: <%= report.confirmations.count %></span>
+        <span class= "text-dark"><i class="fas fa-check-square"></i> 確認済登録: <%= report.confirmations.count %></span>
         <% end %>
 
     <% end %>
 
   <% else %>
 
-   <span class= "text-success"><i class="fas fa-check-square"></i> 確認済者数: <%= report.confirmations.count %></span>
+   <span class= "text-info"><i class="fas fa-check-square"></i> 確認済者数: <%= report.confirmations.count %></span>
 
   <% end %>
