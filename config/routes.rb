@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+    root to: 'users/homes#top'
+  
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -23,7 +25,7 @@ devise_for :users, controllers: {
   end
   
   scope module: :users do
-    resources :users, except: [:destroy, :new, :create]
+    resources :users, except: [:destroy, :new, :create] 
     #get 'users/index'
     #get 'users/show'
     #get 'users/edit'
@@ -36,6 +38,7 @@ devise_for :users, controllers: {
     #get 'confirmations/create'
     #get 'confirmations/destroy'
   end
+    resources :events, only: [:create, :update, :destroy]
   end
   
   namespace :admins do

@@ -1,1 +1,1 @@
-$(".confirmations_buttons_<%= @report.id %> ").html("<%= render 'users/confirmations/confirmation', report: @report %>");
+$(".confirmations_buttons_<%= @report.id %> ").html("<%= j(render 'users/confirmations/confirmation', report: @report) %>");
