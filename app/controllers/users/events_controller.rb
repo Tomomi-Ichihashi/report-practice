@@ -13,14 +13,15 @@ class Users::EventsController < ApplicationController
   end
 
   def destroy
-      @user = User.find(params[:id])
       event = Event.find(params[:id])
       event.destroy
+      @events = Event.where(user_id: current_user.id)
   end
   
   private
   
   def event_params
-      params.require(:event).permit(:title, :body, :end, :user_id, :body)
+      params.require(:event).permit(:title, :body, :start, :end, :user_id)
+  end
   
 end
