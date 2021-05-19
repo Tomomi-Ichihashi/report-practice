@@ -19,7 +19,7 @@
           <th class="align-middle"><%= report.user.last_name %> <%= report.user.first_name %></th>
           <th class="align-middle"><%= report.client.name %></th>
           <th class="align-middle">
-            <%= link_to "#{report.start_visit} ~ #{report.finish_visit}", report_path(report) %>
+            <%= link_to "#{report.start_visit.strftime("%Y/%m/%d %H:%M")} ~ #{report.finish_visit.strftime("%Y/%m/%d %H:%M")}", report_path(report) %>
           </th>
           <th class="confirmations_buttons_<%= report.id %>">
             <%= render 'users/confirmations/confirmation', report: report %>

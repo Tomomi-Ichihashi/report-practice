@@ -3,9 +3,9 @@
     <h4 class="col-md-3 offset-1 bg-light text-center">報告の詳細</h4>
   </div>
   
-  <span><%= @report.created_at %>作成</span>
+  <span><%= @report.created_at.strftime("%Y/%m/%d %H:%M") %>作成</span>
   <% if @report.created_at != @report.updated_at %>
-  <span><%= @report.updated_at %>更新</span>
+  <span><%= @report.updated_at.strftime("%Y/%m/%d %H:%M") %>更新</span>
   <% end %>
   
   <span class="confirmations_buttons_<%= @report.id %>">
@@ -28,7 +28,7 @@
         
         <tr>
           <th class="text-center">訪問日時</th>
-          <th><%= @report.start_visit %> ~ <%= @report.start_visit %></th>
+          <th><%= @report.start_visit.strftime("%Y/%m/%d %H:%M") %> ~ <%= @report.start_visit.strftime("%Y/%m/%d %H:%M") %></th>
         </tr>
         
         <tr>
