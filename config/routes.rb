@@ -47,6 +47,9 @@ devise_for :users, controllers: {
     #get 'users/index'
     #get 'users/show'
     #get 'users/edit'
+  
+    resources :departments, except: [:new, :show,:destroy]
+    # get 'departments/index'
   end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

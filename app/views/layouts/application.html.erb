@@ -61,6 +61,9 @@
           </li>
           <li class="nav-item">
             <%= link_to '社員一覧', admins_users_path, class: 'btn btn-outline-primary' %>
+         <li class="nav-item">
+            <%= link_to "部署一覧", admins_departments_path, class: 'btn btn-outline-primary' %>
+          </li>
           <li class="nav-item">
             <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-outline-primary' %>
           </li>

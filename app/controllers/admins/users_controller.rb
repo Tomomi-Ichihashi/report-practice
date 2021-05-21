@@ -50,7 +50,8 @@ class Admins::UsersController < ApplicationController
       :password,
       :password_confirmation,
       :is_active,
-      :image
+      :image,
+      :department_id
     )
   end
   

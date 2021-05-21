@@ -12,7 +12,7 @@
           <th class="text-center">社員画像</th>
           <th><%= attachment_image_tag @user, :image, fallback: "no_image.jpg", size:'150x150' %></th>
         </tr>
-        
+
         <tr>
           <th class="text-center">氏名</th>
           <th><%= @user.last_name %> <%= @user.first_name %></th>
@@ -35,6 +35,21 @@
   
       </table>
       <%= link_to "編集する", edit_user_path(@user), class:"offset-4 btn btn-success" %> 
+      
+      <div class="member-list">
+        <h5><%= @user.department.name %>メンバー</h5>
+        <table>
+          <% @users.each do |user| %>
+          <tr>
+            <th>
+            <%= link_to "#{user.last_name}#{user.first_name}", user_path(user) %>
+          </th>
+          </tr>
+          <% end %>
+        </table>
+        
+      </div>
+      
     </div>
     
      <div id="calendar-container" class="col-8">
@@ -69,9 +84,9 @@
                                     <%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %></span>
                             </div>
                             <div class="modal-footer">
-                                <%= f.submit "登録する", class: "btn btn-primary" %>
+                                <%= f.submit "登録する", class: "btn btn-outline-success" %>
                                 <%= f.hidden_field :user_id, :value => current_user.id %>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">閉じる</button>
                             </div>
                         <% end %>
                     </div>
@@ -105,17 +120,7 @@
 
         // カレンダー表示
         $('#calendar').fullCalendar ({
-          
-            //カレンダー上部を年月日で表示させる
-            titleFormat: 'YYYY年 M月D日',
- 　　　　  　　　　//曜日を日本語表示
-          　dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
-          　  // 曜日名称
-        　　　dayNames: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
-          　// all-dayを日本語表示　
-          　allDaySlot: false,
-  
-        　　
+       　　
             header: {
                 left: 'prev,next today',
                 center: 'month,agendaWeek,agendaDay',
@@ -131,9 +136,16 @@
                   day: '日'
             },
 
-            timezone: 'UTC',
             // substr()文字列の一部を、指定した位置から後方向指定した文字数だけ返す
             events: `/users/${container.substr(17)}`,
+            // all-dayを表示しない
+          　allDaySlot: false,
+          　// 日本時間 　
+          　timeZone: 'Asia/Tokyo',
+          　//日本語表示 　
+          　lang: 'ja',
+          　// 時間の書式
+            timeFormat: 'H:mm',
             navLinks: true,
             selectable: true,
             selectHelper: true,
