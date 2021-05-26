@@ -16,7 +16,11 @@ module ReportPractice
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     
+    # タイムゾーン変更
     config.time_zone = 'Tokyo'
+    
+    # ページネーション の言語を
+    config.i18n.default_locale = :ja
     
   end
 end
