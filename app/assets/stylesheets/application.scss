@@ -22,3 +22,27 @@
 .nav-item {
     margin-left: 10px;
 }
+
+// top画面
+.main-visual{
+ height: 1200px;
+ background-image: image-url('business_circle_arms.png');
+ background-size: 100% 100%;
+}
+
+// ページネーション 
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {     
+  background: #e3f2fd; /*背景の色を変える*/
+  border-radius: 50%;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {        
+  border-radius: 50%;    /*角を丸くする*/
+}
