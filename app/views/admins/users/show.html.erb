@@ -4,17 +4,12 @@
   </div>
 
   <div class="row">
-    <div class="col-8 ">
+    <div class="col-8 mx-auto">
       <table class="table table-striped">
         
         <tr>
           <th class="text-center">社員画像</th>
           <th><%= attachment_image_tag @user, :image, fallback: "no_image.jpg", size:'150x150' %></th>
-        </tr>
-        
-        <tr>
-          <th class="text-center">社員ID</th>
-          <th><%= @user.id %></th>
         </tr>
         
         <tr>
@@ -25,6 +20,11 @@
         <tr>
           <th class="text-center">フリガナ</th>
           <th><%= @user.last_name_kana %> <%= @user.first_name_kana %></th>
+        </tr>
+        
+        <tr>
+          <th class="text-center">部署名</th>
+          <th><%= @user.department.name %></th>
         </tr>
         
         <tr>

@@ -1,6 +1,6 @@
 class Users::ReportsController < ApplicationController
   def index
-    @reports = Report.all
+    @reports = Report.all.page(params[:page]).per(5)
   end
 
   def new

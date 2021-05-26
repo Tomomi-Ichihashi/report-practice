@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_125131) do
+ActiveRecord::Schema.define(version: 2021_05_20_074429) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(version: 2021_05_17_125131) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -77,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_05_17_125131) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "image_id"
+    t.integer "department_id"
     t.string "last_name"
     t.string "first_name"
     t.string "last_name_kana"

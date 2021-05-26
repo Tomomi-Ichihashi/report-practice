@@ -76,3 +76,7 @@ gem "refile-mini_magick"
 # カレンダー機能
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+
+# ページネーション 
+gem 'kaminari'
+
